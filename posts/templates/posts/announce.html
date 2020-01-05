@@ -1,0 +1,48 @@
+{% extends 'index/index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-header mt-3 text-danger"><h2>Announcement in details</h2></div><hr>
+
+<div class="card">
+<h2>{{announcements.title}}</h2>
+<p style="color:grey">Category: {{announcements.category}}</p>
+<img src='{{ announcements.image.url }}' alt="picture" width="400px" height="300px"/>
+<p>{{announcements.body}}</p>
+</div>
+<h3 class="text-info">Discussions and Contributions</h3>
+<div class="jumbotron">
+{% for comment in comments %}
+    {% if comment.announce_id == announcements.id %}
+        <div class="media">
+            <div class="media-left media-top"><img class="media-object rounded-circle" height="50px" alt="picture" src="{% static 'index/images/download.jpg' %}" /></div>
+            <div class="well">
+            <div class="media-body">
+            <h5 class="meadia-head">{{comment.author}}</h5>
+            <span class="card-text" style="color:grey">-{{comment.time}}</span>
+            <p class="card-text">{{comment.body}}</p>
+            </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<div class="row">
+    <div class="col-lg-6">
+    <form method="POST" action="">
+        <div class="form-group">
+            {% csrf_token %}
+            {{ commentform|crispy }}
+        </div>
+        <button class="btn btn-primary" type="submit">Comment</button>
+    </form>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock  %}

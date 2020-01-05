@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <style type="text/css" src="{% static 'index/css/home.css' %}"></style>
+    <script type="text/javascript" src="{% static 'index/js/slide.js' %}"></script>
+    <script src="https://kit.fontawesome.com/9d936a6ca5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'index/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/js/all.js' %}">
+    <link rel="stylesheet" href="{% static 'index/js/bootstrap.min.js' %}">
+    <script type="text/javascript" src="{% static 'index/js/all.js' %}"></script>
+</head>
+
+<body style="background-image:url({% static 'index/images/comp1.jpg' %}); background-repeat:no-repeat">
+<center>
+    <div class="card mt-5" style="width:300px; text-align:left; background-color:grey;  position:relative; top:45px">
+        <div class="container mb-5">
+        <h5 class="text-default" style="font-size:">Logged out</h5>
+        <div class="mt-5">
+            <a name="" id="" class="btn btn-primary btn-block" href="{% url 'login' %}" role="button">Login Again</a>
+        </div>
+        <p class="mt-5">New Here? <a href="" class="text-blue">Sign Up</a> <a href="" class="text-danger"> Forgot Password?</a></p>
+        </div>
+    </div>
+</center>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

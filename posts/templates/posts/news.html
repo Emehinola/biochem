@@ -1,0 +1,18 @@
+{% extends 'index/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-header mt-3"><h2>Trending News</h2></div><hr>
+
+{% for blog in blogs %}
+<div class="card mb-5">
+<h2>{{blog.title}}</h2>
+<p style="color:grey">Category: {{blog.category}}</p>
+<img src='{{ blog.image.url }}' alt="picture" width="400px" height="300px"  />
+<p>{{blog.body|truncatechars:300}}</p>
+<a class="btn btn-primary" href="/news/details/{{blog.id}}" role="button">Read more</a>
+</div>
+{% endfor %}
+
+{% endblock  %}

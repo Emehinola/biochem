@@ -1,0 +1,87 @@
+{% extends 'index/index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="jumbotron">
+    <h3 class="text-default">Profile Page</h3>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <img src="{% static 'index/images/download.jpg' %}" class="rounded-circle" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>{{prof.first_name}} {{prof.last_name}}</span>
+            </div>
+        </div>
+        </center>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Username</span>
+                <div class="card text-left">
+                    {{user.username}}
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Department</span>
+                <div class="card text-left">
+                    {{prof.department}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Level</span>
+                <div class="card text-left">
+                    {{prof.level}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Matric Number</span>
+                <div class="card text-left">
+                    {{prof.matric_number}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Gender</span>
+                <div class="card text-left">
+                    {{prof.gender}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Email</span>
+                <div class="card text-left">
+                    {{user.email}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <span>Phone</span>
+                <div class="card text-left">
+                    {{prof.phone}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 bg-info">
+                <br>
+                <div class="well mb-5">
+                    <a name="" id="" class="btn btn-success" href="{% url 'announceupdate' %}" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Announcement</a>
+                    <a name="" id="" class="btn btn-danger" href="{% url 'update' %}" role="button" style="float:right"><i class="fa fa-plus" aria-hidden="true"></i> Update</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock  %}
