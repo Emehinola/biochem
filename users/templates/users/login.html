@@ -30,7 +30,7 @@
             </div>
             <button type="submit" class="btn btn-info btn-lg btn-block">Login</button>
         </form>
-        <p class="mt-5">New Here? <a href="" class="text-blue">Sign Up</a> <a href="" class="text-danger"> Forgot Password?</a></p>
+        <p class="mt-5">New Here? <a href="{% url 'register' %}" class="text-blue">Sign Up</a> <a href="{% url 'password_reset' %}" style="pointer-events:none" class="text-danger"> Forgot Password?</a></p>
         </div>
     </div>
 </center>

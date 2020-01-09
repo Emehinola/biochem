@@ -30,10 +30,14 @@ urlpatterns = [
     url(r'announcement/(?P<id>\d+)$', post_views.announce, name='announce'),
     path('admin/', admin.site.urls),
     url(r'home/', index_views.home, name='home'),
+    url(r'register', users_views.register, name='register'),
     url(r'profile/', include('users.urls')),
+    url(r'password-reset/', auth_view.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'),
+    url(r'password-reset-done/', auth_view.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
+    url(r'password-reset-confirm/<uidb64>/<token>/', auth_view.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
     url('', include('index.urls'))
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -22,6 +22,7 @@ class AnnouncementForm(forms.ModelForm):
     title = forms.CharField(max_length=100)
     image = forms.FileField()
     body = forms.Textarea()
+    level = forms.CharField(max_length=10)
     category_choices = [
         ('Assignment', 'Assignment'),
         ('Suggestion', 'Suggestion')
@@ -29,7 +30,7 @@ class AnnouncementForm(forms.ModelForm):
     category = forms.ChoiceField(choices=category_choices)
 
     class Meta:
-        fields = ['title', 'image', 'body', 'category']
+        fields = ['title', 'image', 'body', 'level', 'category']
         model = Announcement
 
 class TrendingForm(forms.ModelForm):

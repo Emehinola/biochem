@@ -8,7 +8,7 @@ def index(request):
 
 def home(request):
     blogs = Trending.objects.all()[:3]
-    announces = Announcement.objects.all()
+    announces = Announcement.objects.all()[:200]
     context = {
         'title': 'Home',
         'blogs': blogs,

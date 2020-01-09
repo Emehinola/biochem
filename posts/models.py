@@ -1,4 +1,4 @@
-from django.db import models
+﻿from django.db import models
 from django.contrib.auth.models import User
 import django.utils.timezone
 
@@ -7,14 +7,15 @@ import django.utils.timezone
 class Announcement(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.FileField(default="download.png", upload_to="posts pics")
+    image = models.FileField(default="download.png", upload_to="posts_pics")
     body = models.TextField()
     category_choices = [
         ('Assignment', 'Assignment'),
         ('Suggestion', 'Suggestion')
     ]
     category = models.CharField(max_length=50, choices=category_choices)
-    time = models.DateField(auto_now=True)
+    level = models.CharField(max_length=10, default="")
+    time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -66,3 +67,4 @@ class AnnouncementComment(models.Model):
         return self.author
     class Meta:
         verbose_name_plural = "Announcement Comment"
+

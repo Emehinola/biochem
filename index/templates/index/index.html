@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
-    <style type="text/css" src="{% static 'index/css/home.css' %}"></style>
-    <script type="text/javascript" src="{% static 'index/js/slide.js' %}"></script>
+
     <script src="https://kit.fontawesome.com/9d936a6ca5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'index/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'index/css/bootstrap.min.css' %}">
@@ -24,11 +23,11 @@
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
+                    <a class="nav-link" id="profile" href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'news' %}"><i class="fas fa-newspaper    "></i> Trending</a>
@@ -37,7 +36,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ACS</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{% url 'announceupdate' %}">Assignment and Discussion</a>
-                        <a class="dropdown-item" href="{% url 'update' %}">Post update</a>
+                        <a class="dropdown-item" href="{% url 'update' %}">Post News update</a>
                         <a class="dropdown-item" href="{% url 'announceupdate' %}">Suggestion</a>
                     </div>
                 </li>
@@ -61,20 +60,6 @@
     <footer class="page-footer">
     <center>
         <div class="row">
-            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-5">
-                <h4 style="color:cornflowerblue">Access Links</h4>
-                <ul>
-                    
-                </ul>
-            </div>
-            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 mt-5">
-                <h4 style="color:cornflowerblue">Connect On</h4>
-                <ul>
-                    <li style="display:inline"><a href="https://facebook.com/The-Rhokaye-Schools-2645341108828651/"><i style="color:blue" class="fab fa-facebook fa-2x fa-sm-1x"></i></a></li>
-                    <li style="display:inline"><a href="https://whatsapp.com/"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-                    <li style="display:block"><i class="fas fa-blender-phone    "></i>+234-6672-617-397</li>
-                </ul>
-            </div>
             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-5" style="color:white">
                 <h4 style="color:cornflowerblue">About The Developer</h4>
                 <p>I'm Emehinola Samuel Sunday, a student of UNIVERSITY OF LAGOS.

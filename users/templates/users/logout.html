@@ -26,7 +26,7 @@
         <div class="mt-5">
             <a name="" id="" class="btn btn-primary btn-block" href="{% url 'login' %}" role="button">Login Again</a>
         </div>
-        <p class="mt-5">New Here? <a href="" class="text-blue">Sign Up</a> <a href="" class="text-danger"> Forgot Password?</a></p>
+        <p class="mt-5">New Here? <a href="{% url 'register' %}" class="text-default" style="color:green; font-weight:bolder; pointer-events:none">Sign Up</a></p><p> <a href="{% url 'password_reset' %}" class="text-danger"> Forgot Password?</a></p>
         </div>
     </div>
 </center>
