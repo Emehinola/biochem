@@ -9,7 +9,11 @@
 <div class="card mb-5">
 <h2>{{blog.title}}</h2>
 <p style="color:grey">Category: {{blog.category}}</p>
-<img src='{{ blog.image.url }}' alt="picture" width="400px" height="300px"  />
+<div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <img src='{{ blog.image.url }}' alt="picture" width="100%" height="300px"  />
+        </div>
+        </div>
 <p>{{blog.body|truncatechars:300}}</p>
 <a class="btn btn-primary" href="/news/details/{{blog.id}}" role="button">Read more</a>
 </div>

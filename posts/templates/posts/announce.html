@@ -19,13 +19,17 @@
         <div class="media">
             <div class="media-left media-top"><img class="media-object rounded-circle" height="50px" alt="picture" src="{% static 'index/images/download.jpg' %}" /></div>
             <div class="well">
-            <div class="media-body">
-            <h5 class="meadia-head">{{comment.author}}</h5>
+            <div class="media-body ml-3">
+            <h5 class="meadia-head">{{comment.author}}
             <span class="card-text" style="color:grey">-{{comment.time}}</span>
+            </h5>
+            <div class="card">
             <p class="card-text">{{comment.body}}</p>
             </div>
             </div>
+            </div>
         </div>
+        <br>
     {% endif %}
 {% endfor %}
 

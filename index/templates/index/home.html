@@ -109,7 +109,7 @@
     </div>
     <hr>
     <br>
-    <h4 class="text-danger"><a href="#colcontent" data-toggle="collapse"> Suggestions and Assignments</a></h4><br>
+    <h4 class="text-danger"><a href="#colcontent" data-toggle="collapse" class="text-danger"> Suggestions and Assignments</a></h4><br>
     <div class="row collapse in" id="colcontent">
             {% for announce in announces %}
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
@@ -122,15 +122,15 @@
                     <h5 class="media-heading" style="font-weight:900">{{announce.author}} 
                     <p  style="color:darkkhaki; font-size:15px">Category: {{announce.category}}<span class="text-info"> {{announce.time}}</span></p>
                     <p  style="color:pink; font-size:15px">Level: {{announce.level}}></p>
-                    <img src='{{ announce.image.url }}' alt="picture" width="300px" height="200px"  />
                     </h5>
                     <hr>
                 </div>
-                    <p class="media-heading ml-3" style="color:black; margin-top:-10px">{{announce.title|truncatechars:100}}</p>
                 </a>
             </div>
-            <br>
+            <p class="media-heading" style="color:black; margin-top:-10px">{{announce.title|truncatechars:100}}</p>
+            <img src='{{ announce.image.url }}' alt="picture" width="100%" height="200px"  />
             </div>
+             <br>
     {% endfor %}
             </div>
             <br>
@@ -139,7 +139,7 @@
     <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <p>Welcome to market place, Here you can post whatever you want to sell or buy from people</p>
-                <p class="text-danger">Sorry, this service is not available at this moment</p>
+                <p class="text-danger">Sorry, this service is not available at this moment. It will be available in the next version of this site</p>
             </div>
     </div>
 </div>

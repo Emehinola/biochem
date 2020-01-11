@@ -10,8 +10,7 @@
 <div class="col-lg-8">
 <div class="card">
 <div class="media">
-<div class="media-left media-top"><img class="media-object rounded-circle" height="50px" alt="picture" src="{% static 'index/images/download.jpg' %}" /></div>
-<div class="media-body ml-3">
+<div class="media-body">
 <h2 class="media-head">{{blog.title}}</h2>
 <img class="media-object" height="300px" width="100%" alt="picture" src="{{blog.image.url}}" />
 <p style="color:grey">Category: {{blog.category}}</p>
@@ -32,12 +31,14 @@
             <div class="media-left media-top"><img class="media-object rounded-circle" height="50px" alt="picture" src="{% static 'index/images/download.jpg' %}" /></div>
             <div class="well">
             <div class="media-body ml-3">
-            <h5 class="meadia-head">{{comment.author}}</h5>
-            <p class="card-text ml-3">{{comment.body}}</p>
-            <span class="card-text" style="color:grey">-{{comment.time}}</span>
+            <h5 class="meadia-head">{{comment.author}}
+            <span class="card-text" style="color:grey; font-size:10px">-{{comment.time}}</span>
+            </h5>
+            <div class="card"> <p class="card-text">{{comment.body}}</p> </div>
             </div>
             </div>
         </div>
+        <br>
     {% endif %}
 {% endfor %}
 <div class="row">

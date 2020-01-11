@@ -47,7 +47,7 @@ def announce(request, id):
             comment.announce_id = id
             comment.author = request.user
             comment.save()
-
+            return redirect(f"announcement/{id}")
     else:
         comment_form = AnnouncementCommentForm()
 

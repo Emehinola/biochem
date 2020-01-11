@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -149,15 +151,17 @@ EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#AWS_STORAGE_BUCKET_NAME = 'biochem'
-#AWS_S3_ENDPOINT_URL = 'https://biochem.nyc3.digitaloceanspaces.com'
-#AWS_S3_OBJECT_PARAMETERS = {
-#    'CacheControl': 'max-age=86400',
-#}
-#AWS_LOCATION = 'biochem-files'
-#STATIC_URL = 'https://%s/%s/' %(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+AWS_ACCESS_KEY_ID = 'EIAZ62WIRSOZPN33V34A'
+AWS_SECRET_ACCESS_KEY = '8RRQxHxdylcnOiKxYSZggBa2bvbVI8t0aSLw1TbfGMY'
+AWS_STORAGE_BUCKET_NAME = 'biochem'
+AWS_S3_ENDPOINT_URL = 'https://nyc3.digitaloceanspaces.com'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_DEFAULT_ACL = 'public-read'
+AWS_LOCATION = 'biochemistry'
+#MEDIA_URL = 'https://%s/%s/' %(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+STATIC_URL = 'https://%s/%s/' %(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
 
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
